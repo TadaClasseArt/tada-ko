@@ -105,8 +105,16 @@ async function initProAccess(){
     if(error){ list.innerHTML = "<p class='muted'>"+t.resErr+"</p>"; return; }
     if(!data || !data.length){ list.innerHTML = "<p class='muted'>"+t.resEmpty+"</p>"; return; }
     list.innerHTML = data.map(function(r){
-      const link = (r.url && r.url !== "#") ? "<a class='btn' style='margin-top:10px' href='"+r.url+"' target='_blank' rel='noopener'>"+t.open+"</a>" : "";
-      return "<div class='res-card'><div class='rcat'>"+(r.category||"")+"</div><h3>"+r.title+"</h3><p class='muted'>"+(r.description||"")+"</p>"+link+"</div>";
+      var u = r.url || "";
+      var vm = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+      var yt = u.match(/(?:youtu\.be\/|[?&]v=|youtube\.com\/embed\/)([\w-]{6,})/);
+      var box = "position:relative;padding-bottom:56.25%;height:0;margin-top:12px;background:#000";
+      var ifr = "position:absolute;inset:0;width:100%;height:100%;border:0";
+      var media = "";
+      if(vm){ media = "<div style='"+box+"'><iframe src='https://player.vimeo.com/video/"+vm[1]+"' style='"+ifr+"' allow='fullscreen; picture-in-picture' allowfullscreen></iframe></div>"; }
+      else if(yt){ media = "<div style='"+box+"'><iframe src='https://www.youtube.com/embed/"+yt[1]+"' style='"+ifr+"' allow='fullscreen' allowfullscreen></iframe></div>"; }
+      var link = (!media && u && u !== "#") ? "<a class='btn' style='margin-top:10px' href='"+u+"' target='_blank' rel='noopener'>"+t.open+"</a>" : "";
+      return "<div class='res-card'><div class='rcat'>"+(r.category||"")+"</div><h3>"+r.title+"</h3><p class='muted'>"+(r.description||"")+"</p>"+media+link+"</div>";
     }).join("");
   }
   loginForm.addEventListener("submit", async function(e){
