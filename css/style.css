@@ -249,3 +249,9 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .split-diagonal .sd-b{transform:none;object-position:center 30%}
 .split-diagonal:hover .sd-a{transform:scale(1.05)}
 .split-diagonal:hover .sd-b{transform:scale(1.05)}
+
+/* Encadres accueil plus hauts -> on voit plus le corps des danseurs (dezoom) */
+.fcard img{height:540px}
+.split-diagonal{height:540px}
+.split-diagonal .sd-a{object-position:center 30%}
+.split-diagonal .sd-b{object-position:center 38%}
