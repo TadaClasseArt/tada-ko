@@ -264,7 +264,7 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 
 /* Reglages finaux du montage (depuis le studio) */
 .split-diagonal{height:420px}
-.split-diagonal .sd-a{object-position:center 7%;transform:translateX(-6%)}
-.split-diagonal .sd-b{object-position:center 22%;transform:translateX(23%)}
+.split-diagonal .sd-a{object-position:center 19%;transform:translateX(-6%)}
+.split-diagonal .sd-b{object-position:center 12%;transform:translateX(18%)}
 .split-diagonal:hover .sd-a{transform:scale(1.05) translateX(-6%)}
-.split-diagonal:hover .sd-b{transform:scale(1.05) translateX(23%)}
+.split-diagonal:hover .sd-b{transform:scale(1.05) translateX(18%)}
