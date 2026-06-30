@@ -243,3 +243,9 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .split-diagonal .sd-b{clip-path:none;object-position:center 42%;transform:scale(1.16) translateX(9%)}
 .split-diagonal:hover .sd-a{transform:scale(1.22) translateX(-9%)}
 .split-diagonal:hover .sd-b{transform:scale(1.22) translateX(9%)}
+
+/* Dezoom des deux photos du montage diagonale */
+.split-diagonal .sd-a{transform:none;object-position:center 22%}
+.split-diagonal .sd-b{transform:none;object-position:center 30%}
+.split-diagonal:hover .sd-a{transform:scale(1.05)}
+.split-diagonal:hover .sd-b{transform:scale(1.05)}
