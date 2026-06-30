@@ -212,3 +212,12 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .cv-title{font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--black);margin:32px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
 .contact-centered{max-width:620px;margin:0 auto}
 @media(max-width:900px){ .bio-layout{grid-template-columns:1fr;gap:28px} .bio-photo{position:static;max-width:420px} }
+
+/* Accueil : montage diagonal Pedagogie (classique + tango) */
+.split-diagonal{position:relative;overflow:hidden;background:#fff;height:420px;display:block}
+.split-diagonal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:transform .6s ease}
+.split-diagonal .sd-a{clip-path:polygon(0 0,59.5% 0,39.5% 100%,0 100%);object-position:center 15%}
+.split-diagonal .sd-b{clip-path:polygon(60.5% 0,100% 0,100% 100%,40.5% 100%);object-position:center 22%}
+.split-diagonal:hover .sd-a{transform:scale(1.05)}
+.split-diagonal:hover .sd-b{transform:scale(1.05)}
+.split-diagonal:hover img{opacity:1}
