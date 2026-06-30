@@ -233,3 +233,13 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .split-diagonal:hover .sd-a{transform:scale(1.36) translateX(-11%)}
 .split-diagonal:hover .sd-b{transform:scale(1.36) translateX(11%)}
 .split-diagonal .vcredit{right:8px;left:auto;bottom:14px;top:auto}
+
+/* Montage diagonale v2 : decoupe fixe sur conteneur, recadrage de l'image a l'interieur */
+.split-diagonal .sd-wrap{position:absolute;inset:0;overflow:hidden}
+.split-diagonal .sd-left{clip-path:polygon(0 0,59.5% 0,39.5% 100%,0 100%)}
+.split-diagonal .sd-right{clip-path:polygon(60.5% 0,100% 0,100% 100%,40.5% 100%)}
+.split-diagonal .sd-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split-diagonal .sd-a{clip-path:none;object-position:center 20%;transform:scale(1.16) translateX(-9%)}
+.split-diagonal .sd-b{clip-path:none;object-position:center 42%;transform:scale(1.16) translateX(9%)}
+.split-diagonal:hover .sd-a{transform:scale(1.22) translateX(-9%)}
+.split-diagonal:hover .sd-b{transform:scale(1.22) translateX(9%)}
