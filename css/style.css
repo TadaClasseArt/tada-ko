@@ -255,3 +255,9 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .split-diagonal{height:540px}
 .split-diagonal .sd-a{object-position:center 30%}
 .split-diagonal .sd-b{object-position:center 38%}
+
+/* Retour au cadrage precedent (encadres 420) */
+.fcard img{height:420px}
+.split-diagonal{height:420px}
+.split-diagonal .sd-a{object-position:center 22%}
+.split-diagonal .sd-b{object-position:center 30%}
