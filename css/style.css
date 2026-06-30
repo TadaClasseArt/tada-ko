@@ -221,3 +221,8 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .split-diagonal:hover .sd-a{transform:scale(1.05)}
 .split-diagonal:hover .sd-b{transform:scale(1.05)}
 .split-diagonal:hover img{opacity:1}
+
+/* Inversion montage : tango a gauche, classique a droite */
+.split-diagonal .sd-a{object-position:center 22%}
+.split-diagonal .sd-b{object-position:center 15%}
+.split-diagonal .vcredit{left:8px;right:auto;top:14px;bottom:auto}
