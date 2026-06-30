@@ -197,3 +197,18 @@ main p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .vcredit{position:absolute;right:8px;bottom:14px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);z-index:3;font-family:var(--sans)}
 
 .vcredit{font-size:7px;letter-spacing:.1em}
+
+/* Accueil : carte Pedagogie en une seule photo (cadrage figure) */
+.fcard img{object-position:center 25%}
+/* Enseignement : texte plus large, photos plus petites et equilibrees */
+@media(min-width:901px){ .edu-row{grid-template-columns:1.55fr 1fr} }
+.edu-img img{max-width:340px;width:100%;height:auto;display:block;margin:0}
+.edu-img .credit{text-align:left;max-width:340px}
+
+/* Bio : photo a gauche, texte+CV a droite, titres CV distincts */
+.bio-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:start;margin-top:34px}
+.bio-photo img{width:100%;height:auto;display:block}
+.bio-photo{position:sticky;top:108px}
+.cv-title{font-family:var(--serif);font-weight:500;font-size:1.5rem;color:var(--black);margin:32px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
+.contact-centered{max-width:620px;margin:0 auto}
+@media(max-width:900px){ .bio-layout{grid-template-columns:1fr;gap:28px} .bio-photo{position:static;max-width:420px} }
