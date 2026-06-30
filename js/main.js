@@ -56,10 +56,27 @@ document.addEventListener("DOMContentLoaded", function(){
         msg.textContent = t.required; msg.className = "form-msg err"; return;
       }
       btn.disabled = true; btn.textContent = t.sending;
-      const { error } = await getClient().from("contact_messages").insert([data]);
+      let ok = false;
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            access_key: "5851cbef-f0a8-4c15-9a6a-36c39b2e1678",
+            subject: "Nouvelle demande de contact - tada-ko.fr",
+            from_name: "Site tada-ko",
+            name: (data.first_name + " " + data.last_name).trim(),
+            email: data.email,
+            message: data.message
+          })
+        });
+        const json = await res.json();
+        ok = json.success;
+      } catch(err){ console.error(err); }
+      try { await getClient().from("contact_messages").insert([data]); } catch(e){ console.error(e); }
       btn.disabled = false; btn.textContent = t.send;
-      if(error){ msg.textContent = t.err; msg.className = "form-msg err"; console.error(error); }
-      else { form.reset(); msg.textContent = t.ok; msg.className = "form-msg ok"; }
+      if(ok){ form.reset(); msg.textContent = t.ok; msg.className = "form-msg ok"; }
+      else { msg.textContent = t.err; msg.className = "form-msg err"; }
     });
   }
 
