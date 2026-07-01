@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tada-ko.fr/sitemap.xml
